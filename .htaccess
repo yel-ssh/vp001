@@ -12,5 +12,15 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /vp001/index.php [L]
 </IfModule>
+<<<<<<< HEAD
 
+=======
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
+>>>>>>> 5d5852662d3c4020b3e50c9b2bde5addd08dfcef
 # END WordPress
